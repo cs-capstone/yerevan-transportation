@@ -1,0 +1,364 @@
+.route-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* General styles */
+
+.line-name { position:relative; display:inline-block; padding:0.25em 0.8em 0.2em 0.8em; background-color:#3c3c3c; border-radius:5px; border:2px solid #3c3c3c; color:#eee; font-weight:bold; }
+.line-name .icon-wrapper { display:inline; position:relative; width:1.55em; }
+.line-name .icon-wrapper svg { display:inline-block; position:absolute; width:1.4em; height:auto; }
+.line-name .name-wrapper { display:inline; }
+.line-name .name-wrapper.offset { margin-left:1.8em; }
+
+/* Frontpage */
+
+#frontpage-top-destinations { }
+#frontpage-top-destinations .column { float:left; clear:none; width:23%; margin:0 1%; padding:0; background-color:#fff; }
+#frontpage-top-destinations .photo { max-height:150px; overflow:hidden; }
+#frontpage-top-destinations .photo a { display:block; color:inherit; text-decoration:none; }
+#frontpage-top-destinations .photo img { width:100%; height:auto; }
+#frontpage-top-destinations .offer { padding:10px 5px; text-align:center; background-color:#f0f0f0; font-weight:bold; }
+#frontpage-top-destinations .text { padding:15px; }
+#frontpage-top-destinations .text a { font-weight:bold; word-break:keep-all; }
+
+/* Overlay */
+
+#overlay-panel { display:none; position:fixed; z-index:999 !important; top:0; left:0; width:100%; height:100%; z-index:100; background:#fff; overflow:hidden; }
+#overlay-panel .overlay-wrapper { width:100%; height:100%; border:0; }
+#overlay-panel .overlay-wrapper td { position:relative; margin:0; padding:0; border:0; vertical-align:top; }
+#overlay-panel .overlay-head { height:64px; background:#00b3e0; color:#fff; }
+#overlay-panel .overlay-title { width:auto; font-size:125%; line-height:64px; }
+#overlay-panel .overlay-close { float:left; width:auto; height:64px; padding:1.3em 1.2em 0 1em; cursor:pointer; }
+#overlay-panel .overlay-close svg { width:26px; height:26px; }
+#overlay-panel .overlay-close svg .object { fill:#fff; }
+#overlay-panel .overlay-teaser { height:1px; background:#47b3e0; /* min-content */ }
+#overlay-panel .overlay-body { height:auto; }
+
+#overlay-panel .overlay-map { position:absolute; z-index:10; top:0; right:0; width:100%; height:100%; }
+#overlay-panel .overlay-content { position:absolute; z-index:11; top:0; left:0; width:100%; height:100%; padding:20px; padding-top:33px; background:#fff; }
+
+#overlay-panel.with-map-only .overlay-map { display:block; }
+#overlay-panel.with-map-only .overlay-content { display:none; }
+#overlay-panel.with-content-only .overlay-map { display:none; }
+#overlay-panel.with-content-only .overlay-content { display:block; }
+#overlay-panel.with-content-and-map .overlay-map { display:block; width:50%; }
+#overlay-panel.with-content-and-map .overlay-content { display:block; width:50%; overflow:auto; }
+body.active-overlay { overflow:hidden; }
+
+/* Map layer */
+
+/*
+#transport-map { display:none; position:fixed; z-index:20; top:0; left:0; width:100%; height:100%; z-index:100; background:#fff; }
+#transport-map .map-tools { position:absolute; top:0; left:0; width:100%; height:4.5em; margin:0; padding:0; background:#fbe559; text-align:right; overflow:hidden; }
+#transport-map .map-close { font-size:260%; }
+#transport-map .map-inner { width:100%; height:100%; margin:0; padding:4.5em 0 0 0; }
+#transport-map .map-canvas { width:100%; height:100%; }
+*/
+
+.transport-map-info-window { width:185px; padding:0; padding-top:14px; overflow:hidden; text-align:center; }
+.transport-map-info-window .w-text { padding:10px 0; }
+.transport-map-info-window .w-name { padding:0 0 10px 0; font-weight:bold; }
+.transport-map-info-window .w-button { padding:0 0 2px 0; }
+.transport-map-info-window .w-type { color:#8a8a8a; }
+.transport-map-info-window .w-description { padding:10px 0 0 0; }
+.transport-map-info-window .w-actions ul { margin:0; padding:0; list-style:none; }
+.transport-map-info-window .w-actions li { margin:0; padding:0; list-style:none; }
+.transport-map-info-window .w-actions a { display:block; padding:1em 0; border-top:1px solid #eee; font-weight:bold; }
+
+/* App console */
+
+body.page-app #header { background:#fbe559; }
+body.page-app #header svg.icon-logo-with-title .color-1 { fill:#ffffff; }
+
+#console { height:auto; background:#fbe559; }
+#console.result-screen .slogan { display:none !important; }
+
+#transport-app-console { position:relative; margin:0; padding:0; width:100%; }
+#transport-app-console .mainbox { padding:4.2em 0.7em 6.5em 0.7em; text-align:left; }
+#transport-app-console .slogan { padding:0 0 2.5em 0; text-align:center; font-size:188%; font-weight:bold; }
+#transport-app-console .form-item { float:left; clear:none; position:relative; margin:0; padding:0; padding-top:1.4em; box-sizing:border-box; }
+#transport-app-console .form-item label { position:absolute; top:0; left:0; font-weight:bold; font-size:85%; z-index:1; }
+#transport-app-console .form-item label .form-required { display:none; }
+#transport-app-console .form-item .form-autocomplete { background-image:none; }
+#transport-app-console .form-item .form-text { width:100%; margin:0; line-height:3.2em; height:3.2em; font-size:122%; padding-top:0; padding-bottom:0; cursor:pointer; }
+#transport-app-console .form-item .form-select { width:100%; margin:0; line-height:2.7em; height:3.2em; font-size:122%; padding-top:0; padding-bottom:0; cursor:pointer; }
+#transport-app-console .form-item .field-prefix { display:none; position:absolute; top:0; right:0; }
+#transport-app-console .form-item-place-name-from { width:28%; }
+#transport-app-console .form-item-place-name-from .form-text { border-radius:7px 0 0 7px; border-width:1px 0 1px 1px; }
+#transport-app-console .form-item-place-name-to { width:28%; }
+#transport-app-console .form-item-place-name-to label { padding-left:28px; }
+#transport-app-console .form-item-place-name-to .form-text { border-radius:0 7px 7px 0; border-width:1px 1px 1px 0; padding-left:28px; }
+#transport-app-console .form-item-day { width:17%; padding-left:0.6em; }
+#transport-app-console .form-item-day label { left:0.6em; }
+#transport-app-console .form-item-day .form-select { border-radius:7px 0 0 7px; border-width:1px 0 1px 1px; }
+#transport-app-console .form-item-time { width:12%; }
+#transport-app-console .form-item-time label { display:none; }
+#transport-app-console .form-item-time .form-select { border-radius:0 7px 7px 0; border-width:1px 1px 1px 0; }
+#transport-app-console .form-additional { display:none; clear:both; width:auto; text-align:left; }
+#transport-app-console .form-additional .form-type-checkbox { display:block; float:left; clear:none; width:auto; margin-top:0.6em; padding:0.9em 11px; }
+#transport-app-console .form-additional .form-type-checkbox label { position:initial; color:inherit !important; cursor:pointer; }
+
+#transport-app-console .switch-directions { position:absolute; top:2em; left:-20px; width:40px; height:40px; padding:0.5em 0 0 0; background-color:#fff; text-align:center; cursor:pointer; }
+#transport-app-console .switch-directions svg .object { fill:#47b3e0; }
+#transport-app-console .switch-directions svg {
+  transition: transform 550ms ease;
+  -moz-transition: -moz-transform 550ms ease;
+  -ms-transition: -ms-transform 550ms ease;
+}
+#transport-app-console .switch-directions.flip svg {
+  transform: rotate( -180deg );
+  -moz-transform: rotate( -180deg );
+  -ms-transform: rotate( -180deg );
+}
+
+#transport-app-console .form-actions { float:right; width:14%; margin:0; padding:0; padding-top:1.4em; }
+#transport-app-console .form-submit { width:100%; height:3.2em; line-height:3.2em; margin:0; font-size:122%; background-color:#00b3e0; color:#fff; border-radius:7px !important; }
+
+#transport-app-console .panel-overview table { margin:0; padding:0; border:0; }
+#transport-app-console .panel-overview tr { margin:0; padding:0; border:0; background:none; }
+#transport-app-console .panel-overview th { margin:0; padding:0 10px 0 0; border:0; background:none; font-weight:bold; white-space:nowrap; }
+#transport-app-console .panel-overview td { margin:0; padding:0 0 0 10px; border:0; background:none; }
+#transport-app-console .panel-overview a.is-button { margin:0; margin-top:1em; }
+#transport-app-console .panel-hidden { display:none; }
+
+#transport-app-map-search-console { position:relative; padding:0 0.6em 1em 0.6em; }
+#transport-app-map-search-console .search-button { position:absolute; left:0.4em; padding:0.8em 1em 0.5em 1em; cursor:pointer; }
+#transport-app-map-search-console .search-button svg { width:26px; height:26px; }
+#transport-app-map-search-console .search-button svg .object { fill:#8c8c8c; }
+#transport-app-map-search-console .form-text { width:100%; padding-left:2.9em; line-height:2.2; font-size:120%; }
+
+#transport-app-map-zoom-suggestion { position:absolute; display:none; width:100%; z-index:14; top:8em; text-align:center; }
+
+#transport-app-map-search-results { padding:1em 0; }
+
+/* App qTIP tooltip */
+
+/*
+.app-console-tooltip li { position:relative; }
+.app-console-tooltip li:hover { background:transparent; }
+.app-console-tooltip ul.children { display:none; }
+.app-console-tooltip .pick-me-up { padding:0 !important; }
+.app-console-tooltip .pick-me-up:hover { background:#f0f0f0; }
+.app-console-tooltip .pick-me-up .name { padding:14px 7px 12px 7px; }
+.app-console-tooltip .child .name { padding-left:36px; }
+.app-console-tooltip .arrow .object { fill:#00b3e0; }
+.app-console-tooltip .arrow { position:absolute; top:0; right:0; z-index:2; width:44px; height:44px; text-align:center; padding:0; padding-top:1.1em; }
+.app-console-tooltip .arrow.opened svg { -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -o-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); }
+.app-console-tooltip .map-panel { position:relative; padding:1em 0 1em 40px; background-color:#47b3e0; border-bottom:1px solid #8d8d8d; color:#fff; cursor:pointer; }
+.app-console-tooltip .map-panel svg { position:absolute; left:10px; margin:-4px 0 0 0; }
+.app-console-tooltip .map-panel svg .object { fill:#fbe559; }
+*/
+
+/* Booking */
+
+#transport-booking-finder { }
+#transport-booking-finder .form-item-city-id-from { float:left; width:auto; padding-right:20px; }
+#transport-booking-finder .form-item-city-id-to { float:left; clear:none; width:auto; }
+
+#booking-panel { display:block; position:fixed; z-index:20; bottom:0px; left:0px; width:100%; padding:0; border:0; background-color:#3a3a3a; color:#efefef; -webkit-box-shadow:0px -2px 7px 0px rgba(0,0,0,.15); -moz-box-shadow:0px -2px 7px 0px rgba(0,0,0,.15); box-shadow:0px -2px 7px 0px rgba(0,0,0,.15); }
+#booking-panel .mainbox { max-width:520px; padding-top:1.7em; padding-bottom:1.7em; margin-top:0; margin-bottom:0; }
+#booking-panel .return { display:none; position:fixed; z-index:21; top:0; left:0; width:100%; background:#fff; border-bottom:1px solid #dedede; }
+#booking-panel .return .in { position:relative; padding:15px 20px; cursor:pointer; }
+#booking-panel .return .vcard-left { width:40%; min-width:140px; margin:0; padding-left:22px; }
+#booking-panel .return .vcard-right { text-align:right; }
+#booking-panel .return .icon-arrow-left { position:absolute; margin-left:-22px; margin-top:1px; }
+#booking-panel .booking-switch { display:inline-block; float:right; text-align:right; }
+#booking-panel .booking-info { padding:0; padding-top:10px; margin:0; }
+#booking-panel .booking-title { padding:10px 0 20px 20px; }
+#booking-panel .booking-list { display:none; margin:0; padding:80px 0; }
+#booking-panel .element { margin:20px 0 0 0; padding:0; }
+#booking-panel .element .panel { margin:0; padding:5px 0; }
+#booking-panel .element .vcard-left { width:30px; padding-top:16px; margin-right:10px; }
+#booking-panel .element .vcard-left svg .object { fill:#9a9a9a; }
+#booking-panel .element .in { font-size:85%; color:#9a9a9a; }
+#booking-panel .element .out { margin:0.2em 0 0 0; }
+#booking-panel .element .out-amount { display:inline-block; padding:0 0 0 14px; float:right; font-weight:bold; }
+#booking-panel .element .fare { position:relative; padding:10px 0 10px 40px; border-top:1px solid #dedede; }
+#booking-panel .element .fare-remove { position:absolute; left:6px; top:0; font-size:205%; }
+#booking-panel .element .fare-amount { display:inline-block; padding:0 0 0 14px; float:right; font-weight:bold; }
+#booking-panel .element:first-child { margin-top:0; }
+#booking-panel .booking-tickets .seats { padding:20px 0 10px 0; }
+#booking-panel .booking-fees .element { cursor:pointer; }
+#booking-panel .booking-fees .element .vcard-left { padding-top:4px; }
+#booking-panel .booking-fees .element .pgw-logo { height:33px; width:auto; }
+#booking-panel .booking-fees .element svg .circle { fill:#9a9a9a; }
+#booking-panel .booking-fees .element svg .checkmark { fill:#ffffff; }
+#booking-panel .booking-fees .element svg .back { fill:#ffffff; }
+#booking-panel .booking-fees .element.active svg .circle { fill:#00b3e0; }
+#booking-panel .booking-fees .element.active svg .checkmark { fill:#ffffff; }
+#booking-panel .booking-fees .element.active svg .back { fill:#00b3e0; }
+#booking-panel .booking-fees .element.disabled { opacity:0.4; }
+#booking-panel .booking-total .independent { text-align:center; font-size:140%; background:#FBE559; }
+#booking-panel .booking-agreement { padding:40px 0; }
+#booking-panel .booking-agreement a { font-weight:bold; white-space:nowrap; }
+#booking-panel .booking-actions { clear:both; text-align:center; padding:20px 0; }
+#booking-panel .booking-actions .form-submit { width:100%; font-size:144%; line-height:2.60; height:auto; }
+#booking-panel .booking-actions .cancel { padding:20px 0; }
+#booking-panel .booking-overview { position:relative; }
+#booking-panel .booking-overview .booking-symbol { position:absolute; top:-45px; left:50%; margin-left:-25px; padding:11px 0 0 0; width:50px; height:50px; border-radius:50px; background:#fbe559; border:1px solid #3a3a3a; text-align:center; }
+#booking-panel .booking-messages { margin:0; padding:0; }
+#booking-panel .booking-messages .bubble { margin:1.1em 0; padding:30px 5px; text-align:center; color:#eee; background:#3a3a3a; border-radius:7px; }
+#booking-panel.modal { top:0px; height:100%; background-color:#f5f5f5; color:inherit; overflow:auto; }
+#booking-panel.modal .return { display:block; }
+#booking-panel.modal .booking-overview { display:none; }
+
+
+/* App results */
+
+#timetable-result { padding:0; padding-bottom:40px; }
+
+#timetable-result { float:left; width:64%; }
+#timetable-result-side-panel { float:right; width:31%; height:50em; background:#f0f0f0; border-radius:8px; }
+
+#timetable-result-maps { padding:0 0 40px 0; }
+#timetable-result-maps .map-details { float:left; clear:none; width:auto; margin-right:10px; }
+#timetable-result-maps .map-picture { margin:7px 0 6px 0; border:1px solid #aaa; }
+#timetable-result-maps .map-link { position:relative; padding:0; padding-left:20px; line-height:22px; height:22px; }
+#timetable-result-maps .map-link .icon-location { position:absolute; top:-1px; left:0px; }
+#timetable-result-maps .map-link .icon-location .object { fill:#7c7c7c; }
+
+#timetable-result-content { padding:0; padding-bottom:20px; }
+#timetable-result-content .first-suggestion { padding:20px; margin:0 0 40px 0; background:#00B3E0; border-radius:7px; text-align:center; }
+#timetable-result-content .first-suggestion .text { color:#fff; }
+#timetable-result-content .first-suggestion .action { padding:20px 0 0 0; }
+#timetable-result-content .date-separator { margin:0; padding:1em 0; text-align:center; }
+
+#timetable-result-more { text-align:center; display:none; }
+#timetable-result-loader { text-align:center; display:none; }
+
+
+/* Journey */
+
+.journey { margin:0; padding:1em 0; border:0; border-bottom:1px solid #ccc; cursor:pointer; display: inline-block; min-height: 35px;}
+.journey .row { position:relative; }
+.journey .next-day-arrive { display:inline-block; position:relative; top:-0.9em; margin-right:10px; font-size:57%; text-transform:uppercase; color:#7a7a7a; }
+.journey .info { display:inline-block; color:#9c9c9c; font-size:82%; line-height:1.4; }
+.journey .points {position:relative;}
+.journey .points .time { width:7em; float:left; text-align:center; }
+.journey .points .arrive { float:right; }
+.journey .points .hx {margin-top: 20px; }
+.journey .points .timeline { position:relative; display:block; margin-left:7em; height:3.5em; -webkit-transition:width .6s; transition:width .6s; }
+.journey .points .timeline .fill { position:absolute; z-index:5; top:1.7em; left:0; width:100%; height:4px; background:#dedede; }
+.journey .points .timeline .fill:before { content:""; position:absolute; width:0.8em; height:0.8em; border-radius:10em; background:#ffffff; top:-0.4em; left:0; border:2px solid #dedede; }
+.journey .points .timeline .fill:after  { content:""; position:absolute; width:0.8em; height:0.8em; border-radius:10em; background:#ffffff; top:-0.4em; right:0; border:2px solid #dedede; }
+.journey .points .timeline .length { position:absolute; z-index:7; top:0.8em; width:100%; text-align:center; }
+.journey .points .timeline .length .spot { display:inline-block; background-color:#1abc9c; padding:0.2em 1em; border:2px solid #1abc9c; border-radius:10em; }
+.journey .transfers { padding:0.5em 0 0 0; text-align:center; }
+.journey .transfers .line-name { background:none; border:0; padding:0; margin:0 0.5em; color:#00B3E0; font-size:inherit; transform: translateX(50px);}
+.journey .transfers .icon-arrow-right { position:relative; top:1px; width:10px; height:10px; }
+.journey .agencies { padding:0.5em 0 0 0; text-align:center; text-align:center; }
+.journey .journey-teaser {position:relative;padding:1em;width: 300px;padding-right: 0;}
+.journey .journey-opener { margin:0; margin-top:-1em; padding:0; text-align:center; }
+.journey .journey-opener .show-more { position:relative; display:inline-block; line-height:3em; margin:0; padding:0; padding-left:26px; font-weight:bold; font-size:85%; text-transform:uppercase; }
+.journey .journey-opener .show-more svg { position:absolute; left:0; top:0.5em; width:20px; height:20px; }
+.journey .journey-opener .show-more svg .object { fill:#00B3E0; }
+
+
+/* Journey details */
+
+.journey-details { display:none; }
+
+.journey-details .river-right-bank { position:relative; margin:0; margin-left:6em; }
+.journey-details .river-left-bank { position:absolute; left:-6em; width:3.5em; text-align:right; }
+.journey-details .river-stone { position:absolute; z-index:23; right:-2em; top:50%; margin:-0.5em 0.3em 0 0; width:1em; height:1em; border-radius:10em; border:2px solid #333; background:#fff; }
+
+.journey-details .transfer { padding:0; }
+.journey-details .transfer .inner { padding:2.7em 0; }
+.journey-details .transfer .row { position:relative; display:block; padding:0; padding-left:2.7em; line-height:2.7; }
+.journey-details .transfer .row svg { position:absolute; left:0; top:0.5em; }
+.journey-details .transfer .river { content:""; position:absolute; z-index:21; left:-1.5em; top:-1em; margin:0; width:1px; height:calc(100% + 1em); border:0; border-right:5px dotted #ccc; }
+
+.journey-details .trip { padding:0; }
+.journey-details .trip .river { content:""; position:absolute; z-index:20; left:-1.5em; margin:0; width:1px; height:100%; border:0; border-right:5px solid #333; }
+.journey-details .headsign { padding:0 0 0.5em 0; }
+.journey-details .alternatives { padding:0 0 0.5em 0; }
+.journey-details .alternatives .line-name { margin-bottom:0.3em; background-color:#ccc; border-color:#ccc; color:#333; }
+.journey-details .alternatives .line-name.walk { background-color:#fbe559; border-color:#fbe559; }
+.journey-details .information { padding:1em 0 1em 0; }
+.journey-details .information .length { padding:0.75em 0 1em 0; font-weight:bold; font-size:120%; text-align:left; }
+.journey-details .more-stops-opener { padding:0 0 1em 0; font-weight:bold; }
+.journey-details .more-stops-wrapper { padding:0 0 1em 0; }
+
+.journey-details .stop { position:relative; }
+.journey-details .stop.departure { font-weight:bold; }
+.journey-details .stop.departure:before { content:""; position:absolute; z-index:21; left:-2em; top:0; width:1.5em; height:0.6em; background:#fff; }
+.journey-details .stop.arrive { font-weight:bold; }
+.journey-details .stop.arrive:before { content:""; position:absolute; z-index:21; left:-2em; top:0.8em; width:1.5em; height:calc(100% - 0.8em); background:#fff; }
+
+.journey-details .booking { padding:20px 0 0 0; }
+.journey-details .booking a { position:relative; display:inline-block; padding:12px 33px 12px 63px; color:#fff; background:#00B3E0; border-radius:7px; }
+.journey-details .booking a svg { position:absolute; top:10px; left:33px; }
+.journey-details .booking a svg .object { fill:#fff; }
+.journey-details .booking a:hover { background:#00c6fa; }
+.journey-details .booking-options { display:inline-block; }
+.journey-details .booking-options .op-wrapper { padding:3px 0; }
+.journey-details .booking-options .op-name { display:block; width:200px; float:left; line-height:1.9; overflow:hidden; }
+
+.journey-details .trip-description { position:relative; padding:10px 0 0 30px; }
+.journey-details .trip-description .icon-warning { position:absolute; left:0; }
+.journey-details .trip-description .icon-warning .object { fill:#333; }
+
+.journey-details .map-link { padding-top:20px; }
+.journey-details .map-link a.is-button { background:#eee; }
+
+.journey-details-view { cursor:default; border:none; }
+.journey-details-view .journey-teaser { padding:20px 0 40px 0; border-bottom:1px solid #ccc; }
+.journey-details-view .journey-details { display:block; padding:0 0 6em 0; }
+.journey-details-view .journey-opener { display:none; }
+
+
+/* Loesje-like poster */
+
+#loesje { width:100%; height:100%; background:#fff; text-align:center; }
+#loesje .slogan { width:100%; padding:1em; font-size:164%; color:#947e76; }
+#loesje .signature { padding:3em 1em; }
+
+
+/* Others */
+
+#working-panel { display:none; position:fixed; top:0; left:0; margin:0; padding:0; width:100%; height:100%; background:#fff; z-index:110; }
+#working-panel .positioner { position:relative; top:0; left:0; width:100%; height:100%; }
+#working-panel .waiting { position:absolute; top:50%; left:50%; margin:-20px 0 0 -20px; text-align:center; }
+#working-panel .about { }
+
+#redirect-page { }
+#redirect-page .description { padding:20px 0; }
+#redirect-page .description strong { font-weight:bold; color:#7a7a7a; border-bottom:1px dotted #7a7a7a; }
+#redirect-page .waiting { padding-top:20px; text-align:center; }
+
+
+/* Review form */
+
+#journey-review-form { }
+#journey-review-form h2 { padding:40px 0 10px 0; }
+#journey-review-form label { padding:10px 0 1px 0; }
+#journey-review-form .rating-wrapper .info { padding:0 0 6px 0; }
+#journey-review-form .rating-wrapper .form-type-radio { display:inline-block; float:left; clear:none; width:25%; margin:0; padding:0; text-align:center; border:1px solid #ccc; border-left:0; background:#f0f0f0; }
+#journey-review-form .rating-wrapper .form-type-radio input { display:none; }
+#journey-review-form .rating-wrapper .form-type-radio label { display:block; margin:0; padding:0; color:transparent; cursor:pointer; }
+#journey-review-form .rating-wrapper .form-type-radio.checked { background:#00b3e0; }
+#journey-review-form .rating-wrapper .form-type-radio.value-1 { border-left:1px solid #ccc; border-radius:7px 0 0 7px; }
+#journey-review-form .rating-wrapper .form-type-radio.value-1 label:before { background-position:0 -24px; }
+#journey-review-form .rating-wrapper .form-type-radio.value-1.checked label:before { background-position:0 0; }
+#journey-review-form .rating-wrapper .form-type-radio.value-2 label:before { background-position:-24px -24px; }
+#journey-review-form .rating-wrapper .form-type-radio.value-2.checked label:before { background-position:-24px 0; }
+#journey-review-form .rating-wrapper .form-type-radio.value-3 label:before { background-position:-48px -24px; }
+#journey-review-form .rating-wrapper .form-type-radio.value-3.checked label:before { background-position:-48px 0; }
+#journey-review-form .rating-wrapper .form-type-radio.value-4 { border-right:1px solid #ccc; border-radius:0 7px 7px 0; }
+#journey-review-form .rating-wrapper .form-type-radio.value-4 label:before { background-position:-72px -24px; }
+#journey-review-form .rating-wrapper .form-type-radio.value-4.checked label:before { background-position:-72px 0; }
+#journey-review-form .form-actions { padding-top:20px; }
+#journey-review-form .form-submit { width:100%; }
+
+
+/* Station page */
+
+#station-departures { }
+#station-departures .map-wrapper { margin:20px 0; }
+#station-departures .departure { padding:0.5em 0; }
+#station-departures .departure .time { width:55px; margin:0; font-weight:bold; padding-top:4px; }
+#station-departures .departure .mode { width:45px; margin:0; }
+#station-departures .departure .mode svg .object { fill:#8a8a8a; }
+#station-departures .departure .name { padding-top:4px; }

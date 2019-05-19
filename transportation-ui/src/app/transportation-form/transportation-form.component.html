@@ -1,0 +1,29 @@
+<div class="form-style-5" *ngIf="isReady">
+    <form>
+        <fieldset>
+            <legend><span class="number">1</span>From</legend>
+
+            <app-select-station [streetsData]="streets"
+                                (onStationSelected)="setStation('from', $event)"></app-select-station>
+        </fieldset>
+
+        <fieldset>
+            <legend><span class="number">2</span>To</legend>
+
+            <app-select-station [streetsData]="streets"
+                                (onStationSelected)="setStation('to', $event)"></app-select-station>
+        </fieldset>
+
+      <fieldset>
+        <legend><span class="number">3</span>Criteria</legend>
+        <mat-form-field style="display: block">
+            <mat-select [(ngModel)]="criteria" name="criteria">
+                <mat-option *ngFor="let c of criterias" [value]="c">
+                    {{ c | titlecase }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </fieldset>
+    <input type="submit" (click)="submit()" value="Apply"/>
+  </form>
+</div>

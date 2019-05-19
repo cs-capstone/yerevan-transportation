@@ -1,0 +1,8 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+  margin: 0;
+  padding-left: 8px;
+  background-color: #f4f7f8;
+}

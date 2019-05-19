@@ -1,0 +1,12 @@
+<div id="googlemap" style="display: inline-block;">
+  <agm-map [latitude]="centerLat" [longitude]="centerLng" [zoom]="12">
+      <agm-polyline [strokeColor]="'#1abc9c'">
+            <agm-polyline-point *ngFor="let i of path" [latitude]="i.lat" [longitude]="i.lng">
+            </agm-polyline-point>
+      </agm-polyline>
+  </agm-map>
+</div>
+<app-transportation-form (onPathResponse)="drawRoute($event)"></app-transportation-form>
+<div style="width: 100%; margin-top: 40px;" *ngIf="this.showInfo">
+  <app-route-info *ngFor="let p of routePairs" [pair]="p"></app-route-info>
+</div>

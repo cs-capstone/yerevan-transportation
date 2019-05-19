@@ -1,0 +1,23 @@
+<label>Street</label>
+<mat-form-field class="full-width">
+  <input type="text"
+         matInput [formControl]="control"
+         [matAutocomplete]="streetAutocomplete">
+  <mat-autocomplete #streetAutocomplete="matAutocomplete"
+                    [displayWith]="displayName"
+                    (optionSelected)="loadStations($event.option.value)">
+    <mat-option *ngFor="let street of filteredOptions | async" [value]="street">
+      {{ street.name | titlecase }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
+<label>Station</label>
+<mat-form-field style="display: block">
+  <mat-select (selectionChange)="emitStation($event)">
+    <mat-option *ngFor="let station of stations" [value]="station">
+      {{ station.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
