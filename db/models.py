@@ -2,6 +2,8 @@ from sqlalchemy import Column, Integer, String, Numeric, types, ForeignKey, Tabl
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
+from db.meta import DbSession
+
 
 class Base(object):
     def __json__(self, request):
@@ -67,3 +69,17 @@ class Station(Base):
     transports = relationship('Transport', secondary=transport_station, backref='stations')
 
     street = relationship(Street)
+
+
+class ConnectedStations(Base):
+    def __init__(self, station1_id, station2_id):
+        self.station1_id = station1_id
+        self.station2_id = station2_id
+
+    def get_distance(self):
+        dbSession = DbSession().get_session()
+        row = dbSession.query(connected_stations)\
+            .filter(connected_stations.c.first_station_id == self.station1_id)\
+            .filter(connected_stations.c.second_station_id == self.station2_id)\
+            .all()
+        return row.distance

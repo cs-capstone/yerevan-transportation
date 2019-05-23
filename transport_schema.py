@@ -1,6 +1,6 @@
 import re
 
-from db.models import Station, Transport
+from db.models import Station, Transport, ConnectedStations
 from graph import Graph
 
 
@@ -66,7 +66,6 @@ class TransportSchema:
 
         return result
 
-    # TODO: test for transport change
     def get_transport_from_path(self, path):
         """Find transports which cover the path
 
@@ -133,7 +132,7 @@ class TransportSchema:
                 if transport in n.transports and n.id != previous.id:
                     previous = current
                     current = n
-                    dist += 1  # TODO: make distance
+                    dist += ConnectedStations(previous.id, current.id).get_distance()
                     break
             if current.id == end.id:
                 break
@@ -156,7 +155,7 @@ class TransportSchema:
             not_visited = [s for s in next_stations if s.id not in result]
             next = not_visited[0] if not_visited else None
             if next:
-                result[next.id] = current_dist + 1  # TODO: make distance
+                result[next.id] = current_dist + ConnectedStations(current.id, next.id).get_distance()
                 current_dist = result[next.id]
             current = next
 
@@ -240,5 +239,5 @@ class MinimumTransfersGraph:
                     station = stations_dict[station_id]
                     for neighbor in station.neighbor_stations:
                         if transport_id in map(lambda t: t.id, neighbor.transports):
-                            # TODO: make distance
-                            graph.add_neighbor(v_id, 'station{0}:transport{1}'.format(neighbor.id, transport_id), 1)
+                            graph.add_neighbor(v_id, 'station{0}:transport{1}'.format(neighbor.id, transport_id),
+                                               ConnectedStations(neighbor.id, transport_id).get_distance())
